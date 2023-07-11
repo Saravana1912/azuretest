@@ -4,7 +4,9 @@ import com.ey.udemy.common.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class BeanLifeCycleController {
     private Coach myCoach;
 
@@ -15,7 +17,7 @@ public class BeanLifeCycleController {
         myCoach = theCoach;
     }
 
-    @GetMapping("/dailyworkout")
+    @GetMapping("/dailyworkoutone")
     public String getDailyWorkoutTest() {
         return myCoach.getDailyWorkout();
     }
